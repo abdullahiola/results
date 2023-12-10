@@ -1,0 +1,54 @@
+<!-- index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>   
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+</head>
+<body>
+    <div class="registration-container">
+        <h1>Student Registration</h1>
+        <form id="registrationForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+
+            <h2>Enter Subjects:</h2>
+
+            <!-- Compulsory Subjects -->
+            <label for="subject1">Subject 1 (Compulsory: Mathematics):</label>
+            <input type="text" id="subject1" name="subject1" value="Mathematics" readonly required>
+
+            <label for="subject2">Subject 2 (Compulsory: English):</label>
+            <input type="text" id="subject2" name="subject2" value="English" readonly required>
+
+            <!-- Additional Subjects -->
+            <label for="subject3">Subject 3:</label>
+            <input type="text" id="subject3" name="subject3" required>
+
+            <label for="subject4">Subject 4:</label>
+            <input type="text" id="subject4" name="subject4" required>
+
+            <label for="subject5">Subject 5:</label>
+            <input type="text" id="subject5" name="subject5" required>
+
+            <button type="button" onclick="registerStudent()">Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
