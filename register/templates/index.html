@@ -1,0 +1,53 @@
+{% load static %}
+
+{% block head %}
+    <title>Student Registration</title>   
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+{% endblock head %}
+
+
+{% block content %}
+    <body>
+        <div class="registration-container">
+            <h1>Student Registration</h1>
+            <form id="form" method="POST">
+                {%csrf_token%}
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="first_name" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="last_name" required>
+
+
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+
+
+                <h2>Enter Subjects:</h2>
+
+                <!-- Compulsory Subjects -->
+                <label for="subject1">Subject 1 (Compulsory: Mathematics):</label>
+                <input type="text" id="subject1" name="subject_1" value="Mathematics" readonly required>
+
+                <label for="subject2">Subject 2 (Compulsory: English):</label>
+                <input type="text" id="subject2" name="subject_2" value="English" readonly required>
+
+                <!-- Additional Subjects -->
+                <label for="subject3">Subject 3:</label>
+                <input type="text" id="subject3" name="subject_3" >
+
+                <label for="subject4">Subject 4:</label>
+                <input type="text" id="subject4" name="subject_4" >
+
+                <label for="subject5">Subject 5:</label>
+                <input type="text" id="subject5" name="subject_5" >
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+    </body>
+{% endblock content %}
