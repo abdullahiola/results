@@ -8,16 +8,13 @@ git clone https://github.com/abdullahiola/results.git
 Enter the project directory 
 
 ```
-cd api (for the api folder)
-cd checker (for the checker folder)
-cd register (for the register folder)
+cd api 
 ```
 
 Create a virtual env in each of the folders
 
 ```
 python -m venv env
-(inside each directory/folder)
 ```
 
 Activate your env(for windows)
@@ -57,10 +54,5 @@ Run the server
 python manage.py runserver 4500 
 ```
 
-To run Celery locally:
-```
-celery -A workdistrobe worker -l INFO 
-```
-
-View the api documentation at:
-`https://localhost:8000/api/docs`
+#### Repeat these steps for the checker and register 
+#### Make sure you change the port number when trying to run the server
