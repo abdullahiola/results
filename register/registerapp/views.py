@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import FormDataForm
 from django.contrib import messages
 import requests
+from django.http import JsonResponse
+
 
 # Create your views here.
 
@@ -37,10 +39,9 @@ def index(request):
             if response.status_code == 201:
                 
                 return redirect('success_page')  # Redirect to a success page
-            else:
-                # Handle error
-                pass
-
+            elif response.status_code == 400:
+                response = response.json()
+                return JsonResponse(response, status=400)
     else:
         form = FormDataForm()
 
